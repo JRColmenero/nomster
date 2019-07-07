@@ -1,3 +1,13 @@
+<div class="page_nav col-10 offset-1">
+  <% if @places.previous_page %>
+    <%= link_to "< Previous", params.permit.merge(page: @places.previous_page) %>
+  <% end %>
+  Page <%= @places.current_page %> of <%= @places.total_pages %>
+  <% if @places.next_page %>
+    <%= link_to "Next >", params.permit.merge(page: @places.next_page) %>
+  <% end %>
+</div>
+
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
     <h1><%= place.name %></h1>
