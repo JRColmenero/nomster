@@ -4,6 +4,10 @@ class PlacesController < ApplicationController
     @places = Place.all.page(params[:page]).per_page(10)
   end
 
+  def new
+    @place = Place.new
+  end
+
 end
 
 
